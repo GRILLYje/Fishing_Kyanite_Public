@@ -3,9 +3,9 @@ $ErrorActionPreference = "SilentlyContinue"
 [console]::OutputEncoding = [System.Text.Encoding]::UTF8
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
-Write-Host "Checking for updates (Byou)..." -ForegroundColor Cyan
+Write-Host "Checking for updates (Kyanite)..." -ForegroundColor Cyan
 
-$apiUrl = "https://api.github.com/repos/GRILLYje/Fishing_Byou_Public/releases/latest"
+$apiUrl = "https://api.github.com/repos/GRILLYje/Fishing_Kyanite_Public/releases/latest"
 
 try {
     $releaseInfo = Invoke-RestMethod -Uri $apiUrl -Method Get
@@ -34,7 +34,7 @@ try {
     Exit
 }
 
-$folderPath = "$env:TEMP\Byou"
+$folderPath = "$env:TEMP\Kyanite"
 if (-not (Test-Path $folderPath)) {
     New-Item -ItemType Directory -Path $folderPath -Force | Out-Null
 }
@@ -69,5 +69,5 @@ try {
     Clear-History
 } catch {}
 
-Write-Host "Launching Byou..." -ForegroundColor Green
+Write-Host "Launching Kyanite..." -ForegroundColor Green
 Start-Process -FilePath $tempPath.
